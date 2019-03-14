@@ -4,15 +4,55 @@ import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import './style.css'
 import '../../static/iconfont.less';
-import {getFocus, getBlur} from '../../store/actionCreators'
+import * as actionCreators from '../../store/actionCreators'
 
  class Header extends Component {
 
-   render() {
-    const { focus } = this.props
+  getListArea() {
+    const { focus, list, page,totalPage , handleMouseEnter, handleMouseLeave, mouseIn, handleChangePage } = this.props;
+    const pageList = [];
+    const newList = list.toJS();
+    
+    // 当列表里有数据的时候才让它一项一项展示
+    if(newList.length) {
+        for(let i = (page-1) * 10; i < page * 10;i++) {
+      pageList.push(
+        <li key={newList[i]}> 
+          <Link to={'/'} target="_blank">{newList[i]}</Link>
+        </li>
+      )
+      }
+    }
+  
+    if(focus || mouseIn) {
+      return (
+        <div className="navbar-search-tips"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            >
+          <div className="search-trending">
+            <div className="search-trending-header">
+              <span>热门搜索</span>
+                <strong onClick={() => handleChangePage(page,totalPage,this.spinIcon)} >
+                  <i ref={(icon) => {this.spinIcon = icon}} className="iconfont spin">&#xe851;</i> 换一批
+                </strong>
+            </div>
+            <ul className="search-trending-tag-wrap">
+              {pageList}
+            </ul>
+          </div>
+        </div>
+      )
+    }else {
+      return null
+    }
+  }
 
+   render() {
+     const { focus, handleFocus, handleBlur, list } = this.props
      return (
        <Router>
+         <div className="headerMain">
           <div className="header">
             <Link className="a" to={'/'}></Link>
               <ul className="nav">
@@ -55,56 +95,19 @@ import {getFocus, getBlur} from '../../store/actionCreators'
                     type="text" 
                     placeholder="搜索" 
                     className={focus ? 'focus' : 'input'}
-                    onFocus={this.props.handleFocus.bind(this)}
-                    onBlur={this.props.handleBlur.bind(this)}
+                    onFocus={() => handleFocus(list)}
+                    onBlur={handleBlur}
                     />
                   </CSSTransition>
                   <i 
                     className={focus ? 'iconf iconfont ' : 'icon iconfont'}
                     >&#xe62b;</i>
-                  <div class="search-trending">
-                    <div class="search-trending-header clearfix">
-                      <span>热门搜索</span>
-                      <Link to={'/'}>
-                        <i class="iconfont ic-search-change"></i> 换一批
-                      </Link>
-                    </div>
-                    <ul class="search-trending-tag-wrap">
-                      <li>
-                        <Link to={'/'} target="_blank">区块链</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">小程序</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">vue</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">毕业</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">PHP</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">故事</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">flutter</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">理财</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">美食</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'} target="_blank">投稿</Link>
-                      </li>
-                    </ul>
-                    </div>
+                  {this.getListArea()}
                 </li>
               </ul>
            </div>
+         </div>
+          
        </Router>
       
      )
@@ -117,19 +120,43 @@ import {getFocus, getBlur} from '../../store/actionCreators'
 
     // 调用immutable之后的写法，不能直接调用focus
     // focus:state.header.get('focus')
-    focus:state.getIn(['header', 'focus'])
+    focus:state.getIn(['header', 'focus']),
+    list:state.getIn(['header','list']),
+    page:state.getIn(['header','page']),
+    totalPage:state.getIn(['header','totalPage']),
+    mouseIn:state.getIn(['header','mouseIn'])
   }
  }
 
 const mapDispathToProps = (dispatch) => {
   return {
-    handleFocus() {
-      const action = getFocus()
-      dispatch(action)
+    handleFocus(list) {
+      (list.size === 0) && dispatch(actionCreators.getList())
+      dispatch(actionCreators.getFocus())
     },
     handleBlur() {
-      const action = getBlur()
-      dispatch(action)
+      dispatch(actionCreators.getBlur())
+    },
+    handleMouseEnter() {
+      dispatch(actionCreators.mouseEnter())
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave())
+    },
+    handleChangePage(page,totalPage,spin) {
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig,'');
+      if(originAngle) {
+        originAngle = parseInt(originAngle,10);
+      }else {
+        originAngle = 0;
+      }
+      spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
+
+      if (page < totalPage ) {
+        dispatch(actionCreators.changePage(page + 1))
+      } else {
+        dispatch(actionCreators.changePage(1))
+      }
     }
   }
 }

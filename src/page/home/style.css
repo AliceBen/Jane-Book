@@ -1,0 +1,106 @@
+.homeMain{
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.homeLeft {
+  float: left;
+  width: 580px;
+  height: 400px;
+}
+
+.homeRigth {
+  float: right;
+  width: 280px;
+  height: 400px;
+}
+
+.bigImg {
+  width: 580px;
+  height: 270px;
+  background: url(./image/background.jpg) no-repeat;
+  background-size: 580px 270px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* item展示样式 */
+
+.content {
+  padding-top: 10px;
+  padding-right: 181px;
+}
+
+.itemImg {
+  float: right;
+  width: 150px;
+  height: 100px;
+  background-size: 150px 100px;
+}
+
+.listItem {
+  height: 140px;
+  padding: 15px 2px 20px 0;
+  border-top: 1px solid #f0f0f0;
+  word-wrap: break-word;
+}
+
+.title {
+  margin: -7px 0 4px;
+  display: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.abstract {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #999;
+}
+
+.meta span {
+  margin-right: 10px;
+  color: #b4b4b4;
+}
+
+.meta a {
+  margin-right: 15px;
+  color: #b4b4b4;
+}
+
+.meta {
+  padding-right: 0!important;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.jsd-meta {
+  color: #ea6f5a!important;
+}
+
+.iconItem {
+  margin-right: 0 !important;
+}
+
+/* Recommend */
+
+.board {
+  margin-top: -4px;
+  padding-bottom: 4px;
+  min-height: 228px;
+}
+
+.board img {
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+
+a {
+  cursor: pointer;
+}

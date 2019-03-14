@@ -1,7 +1,7 @@
 @import '../../../src/style.less';
 @import '../../static/iconfont.less';
 
-body {
+.headerMain {
   border-bottom: 1px solid rgb(235, 232, 232);
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 input[type='text'] {
-  width:200px;
+  width:220px;
   height: 38px;
   margin-top: 10px;
   margin-left: 20px;
@@ -65,7 +65,7 @@ input[type='text'] {
 }
 
 .focus {
-  width: 260px !important;
+  width: 300px !important;
 }
 
 .reg {
@@ -146,27 +146,39 @@ input[type='text'] {
   width: 200px;
 }
 
-.search-trending {
+.navbar-search-tips {
   position: absolute;
-  padding: 20px 20px 10px;
-  border-bottom: 1px solid #f0f0f0;
+  margin-top: 11px;
+  width: 250px;
+  left: 20px;
+  top: 100%;
+  border-radius: 4px;
+}
+
+.navbar-search-tips, #navbar-search-tips:before {
+  position: absolute;
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
 }
 
-.search-trending :before {
+.search-trending {
+  padding: 20px 20px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar-search-tips :before {
   content: "";
   position: absolute;
-  width: 10px;
-  top: -5px;
+  top: -6px;
   left: 27px;
-  z-index: 100;
-  height: 10px;
+  width: 15px;
+  height: 15px;
+  z-index: -1;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   background-color: #fff;
-  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  box-shadow: 0 0 1px rgba(224, 221, 221, 0.2);
 }
 
 .search-trending-header {
@@ -178,15 +190,30 @@ input[type='text'] {
   float: left;
   font-size: 14px;
   color: #969696;
+
 }
 
-.search-trending-header a {
+.search-trending-header strong {
   float: right;
   font-size: 13px;
   color: #969696;
   background-color: transparent;
   border-width: 0;
   padding: 0;
+  cursor:pointer;
+}
+
+.spin{
+  float: left;
+  display: block;
+  transition: all .2s ease-in;
+  /* 以自己的中心为旋转中心 */
+  transform-origin: center center;
+}
+
+.spin::before{
+  width: 0;
+  height: 0;
 }
 
 .search-trending-tag-wrap li {
