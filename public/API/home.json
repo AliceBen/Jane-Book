@@ -4,7 +4,7 @@
 		"articleList": [{
 			"id": 1,
 			"title": "【教学随笔】今天的教室很暖",
-			"desc": "今天的教室很暖 昨天，在教师群里看到一张图片，很气愤，也很郁闷。 这是一张家长群里的图片截图，因为老师的代步工具是自行车，受到了",
+			"desc": "今天的教室很暖 昨天，在教师群里看到一张图片，很气愤，也很郁闷。 这是一张家长群里的图片截图，因为老师的代步工具是自行车，受到了...",
 			"imgUrl": "//upload-images.jianshu.io/upload_images/7273286-06727bd9053a15d7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
 		}, {
 			"id": 2,
@@ -19,7 +19,7 @@
 		}, {
 			"id": 4,
 			"title": "一件趣事：我用 Python 爬了爬自己的微信朋友",
-			"desc": "最近几天干啥都不来劲，昨晚偶然了解到Python里的itchat包，它已经完成了wechat的个人账号API接口，使爬取个人微信信息更加方便。 ..",
+			"desc": "最近几天干啥都不来劲，昨晚偶然了解到Python里的itchat包，它已经完成了wechat的个人账号API接口，使爬取个人微信信息更加方便。..",
 			"imgUrl": "//upload-images.jianshu.io/upload_images/15679176-b0d51a7d0c243c01?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
 		}],
 		"recommendList": [{

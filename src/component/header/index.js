@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import './style.css'
 import '../../static/iconfont.less';
 import * as actionCreators from '../../store/actionCreators'
+import { actionCreator as loginActionCreators } from '../../page/login/store'
 
  class Header extends Component {
 
@@ -49,12 +50,12 @@ import * as actionCreators from '../../store/actionCreators'
   }
 
    render() {
-     const { focus, handleFocus, handleBlur, list } = this.props
+     const { focus, handleFocus, handleBlur, list, login, logout } = this.props
      return (
        <Router>
          <div className="headerMain">
           <div className="header">
-            <Link className="a" to={'/'}></Link>
+            <Link className="a" to='/'></Link>
               <ul className="nav">
                 <li className="left">
                   <Link className="active" to={'/'}>
@@ -78,7 +79,11 @@ import * as actionCreators from '../../store/actionCreators'
                   <Link className="reg" to={'/'}>注册</Link>
                 </li>
                 <li className="right">
-                  <Link className="itemR" to={'/'}>登录</Link>
+                  {
+                    login ? 
+                      <Link onClick={logout} className="itemR" to={''} >退出</Link> : 
+                      <Link className="itemR" to='/login'target="_parent" >登录</Link>
+                  }
                 </li>
                 <li className="right">
                   <Link className="itemR"  to={'/'}>
@@ -124,7 +129,8 @@ import * as actionCreators from '../../store/actionCreators'
     list:state.getIn(['header','list']),
     page:state.getIn(['header','page']),
     totalPage:state.getIn(['header','totalPage']),
-    mouseIn:state.getIn(['header','mouseIn'])
+    mouseIn:state.getIn(['header','mouseIn']),
+    login: state.getIn(['login','login']) 
   }
  }
 
@@ -157,7 +163,10 @@ const mapDispathToProps = (dispatch) => {
       } else {
         dispatch(actionCreators.changePage(1))
       }
-    }
+    },
+		logout() {
+			dispatch(loginActionCreators.logout())
+		}
   }
 }
 
