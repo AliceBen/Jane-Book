@@ -5,6 +5,7 @@ import List from './components/List'
 import Recommend from './components/Recommend'
 import Writer from './components/Writer'
 import { actionCreator } from './store'
+import Banner from './components/banner'
 
 class Home extends Component {
 
@@ -16,7 +17,7 @@ class Home extends Component {
     return(
       <div className="homeMain">
         <div className="homeLeft">
-          <img alt='' className="bigImg"/>
+          <Banner />
           <List/>
         </div>
         <div className="homeRigth">

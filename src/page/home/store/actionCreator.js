@@ -37,3 +37,11 @@ export const toggleTopShow = (show) => ({
 	type: actionType.TOGGLE_SCROLL_TOP,
 	show
 })
+
+export const changeImgOver = () => ({
+	type: actionType.CHANGE_OVERIMG
+})
+
+export const changeImgOut = () => ({
+	type: actionType.CHANGE_OUTIMG
+})

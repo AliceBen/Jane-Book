@@ -16,15 +16,6 @@
   height: 400px;
 }
 
-.bigImg {
-  width: 580px;
-  height: 270px;
-  background: url(./image/background.jpg) no-repeat;
-  background-size: 580px 270px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
 .side-tool {
   position: fixed;
   width: 50px;
@@ -136,4 +127,60 @@
 
 a {
   cursor: pointer;
+}
+
+/* write */
+
+.download {
+  display: block;
+  width: 235px !important;
+  height: 65px;
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.download .qrcode {
+  float: left;
+  width: 60px;
+  height: 60px;
+  opacity: .85;
+}
+
+.download .info {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 7px;
+  margin-left: 7px;
+}
+
+.info .title {
+  font-size: 15px;
+  color: #333;
+}
+
+.info .description {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #999;
+}
+
+.erweima {
+  position: absolute;
+  display: block;
+  width: 150px;
+  margin-top: -164px;
+  margin-left: 60px;
+  z-index: 999;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.adv {
+  width: 280px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }

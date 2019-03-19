@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import './style.css'
@@ -52,27 +52,23 @@ import { actionCreator as loginActionCreators } from '../../page/login/store'
    render() {
      const { focus, handleFocus, handleBlur, list, login, logout } = this.props
      return (
-       <Router>
          <div className="headerMain">
           <div className="header">
             <Link className="a" to='/'></Link>
               <ul className="nav">
                 <li className="left">
                   <Link className="active" to={'/'}>
-                    <i className="iconfont">&#xe6eb;
-                    </i>首页
+                    <i className="iconfont">&#xe6eb;</i>首页
                   </Link>
                 </li>
                 <li className="left">
                   <Link className="item" to={'/'}>
-                    <i className="iconfont">&#xe611;
-                    </i>下载App
+                    <i className="iconfont">&#xe611;</i>下载App
                   </Link>
                 </li>
                 <li>
-                  <Link className="write" to={'/'}>
-                    <i className="iconfont">&#xe62d;
-                    </i>写文章
+                  <Link className="write" to='/write'>
+                    <i className="iconfont">&#xe62d;</i>写文章
                   </Link>
                   </li>
                 <li>
@@ -82,7 +78,7 @@ import { actionCreator as loginActionCreators } from '../../page/login/store'
                   {
                     login ? 
                       <Link onClick={logout} className="itemR" to={''} >退出</Link> : 
-                      <Link className="itemR" to='/login'target="_parent" >登录</Link>
+                      <Link className="itemR" to='/login'>登录</Link>
                   }
                 </li>
                 <li className="right">
@@ -112,9 +108,6 @@ import { actionCreator as loginActionCreators } from '../../page/login/store'
               </ul>
            </div>
          </div>
-          
-       </Router>
-      
      )
    }
  }

@@ -5,7 +5,8 @@ const defaultState = fromJS({
   articleList: [],
   recommendList:[],
   articlePage: 1,    // 分页
-  showScroll: false
+  showScroll: false,
+  mouseOver:false
 });
 
 const changeHomeDate = (state, action) => {
@@ -30,6 +31,12 @@ export default (state = defaultState, action) => {
       return addArticleLList(state, action)
     case actionType.TOGGLE_SCROLL_TOP:
       return state.set('showScroll',action.show);
+    case actionType.CHANGE_OVERIMG:
+    console.log('over')
+      return state.set('mouseOver',true)
+    case actionType.CHANGE_OUTIMG:
+    console.log('out')
+      return state.set('mouseOver',false)
     default: 
       return state;
   }

@@ -153,6 +153,7 @@ input[type='text'] {
   left: 20px;
   top: 100%;
   border-radius: 4px;
+  z-index: 999;
 }
 
 .navbar-search-tips, #navbar-search-tips:before {
