@@ -33,6 +33,7 @@ class Home extends Component {
   }
   componentDidMount() {
     this.props.changeHomeData();
+    this.props.changeAuthorData();
     this.bindEvents();
   }
 
@@ -59,6 +60,9 @@ const mapDispatch = (dispatch) => ({
     } else {
       dispatch(actionCreator.toggleTopShow(false))
     }
+  },
+  changeAuthorData() {
+    dispatch(actionCreator.getMoreAuthor())
   }
 })
 

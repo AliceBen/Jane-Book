@@ -6,13 +6,14 @@ const defaultState = fromJS({
   recommendList:[],
   articlePage: 1,    // 分页
   showScroll: false,
-  mouseOver:false
+  mouseOver:false,
+  authorList:[]
 });
 
 const changeHomeDate = (state, action) => {
   return state.merge({
     articleList:fromJS(action.articleList),
-    recommendList:fromJS(action.recommendList)
+    recommendList:fromJS(action.recommendList),
   })
 }
 
@@ -32,11 +33,12 @@ export default (state = defaultState, action) => {
     case actionType.TOGGLE_SCROLL_TOP:
       return state.set('showScroll',action.show);
     case actionType.CHANGE_OVERIMG:
-    console.log('over')
       return state.set('mouseOver',true)
     case actionType.CHANGE_OUTIMG:
-    console.log('out')
       return state.set('mouseOver',false)
+    case actionType.ADD_AUTHOR:
+      console.log(action,'123')
+      return state.set('authorList',fromJS(action.authorList))
     default: 
       return state;
   }

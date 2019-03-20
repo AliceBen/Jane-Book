@@ -14,10 +14,15 @@ const addHomeList = (list, nextPage) => ({
 	nextPage
 })
 
+const addAuthor = ( result ) => ({
+	type: actionType.ADD_AUTHOR,
+	authorList: result.authorList
+})
+
 export const getHomeInfo = () => {
 	return (dispatch) => {
 		axios.get('/API/home.json').then((res) => {
-      const result = res.data.data
+			const result = res.data.data
 			dispatch(changHomeData(result));
     })
 	}
@@ -45,3 +50,13 @@ export const changeImgOver = () => ({
 export const changeImgOut = () => ({
 	type: actionType.CHANGE_OUTIMG
 })
+
+export const getMoreAuthor = () => {
+	return (dispatch) => {
+		axios.get('/API/write.json').then((res) => {
+			const result = res.data.data
+			console.log(result)
+			dispatch(addAuthor(result));
+    })
+	}
+}
