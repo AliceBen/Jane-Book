@@ -10,12 +10,12 @@ class Login extends Component {
 		if (!loginStatus) {
     return(
       <div className="sign">
-        <div className="main">  
+        <div className="signMain">  
           <h4 className="title">
             <div className="normal-title">
               <Link className="active" to="/sign_in">登录</Link>
                 <b>·</b>
-              <Link className="" to="/sign_up">注册</Link>
+              <Link className="" to="/register">注册</Link>
             </div>
           </h4>
           <div className="js-sign-in-container">
@@ -23,12 +23,12 @@ class Login extends Component {
 
             <div className="input-prepend restyle js-normal">
               <input placeholder="手机号或邮箱" type="text" className="tel" ref={(input) => {this.account = input}} />
+              <i className="iconfont ic-user">&#xe61c;</i>
             </div>
-
             <div className="input-prepend">
               <input placeholder="密码" type="password" className="pwd" ref={(input) => {this.password = input}} />
+              <i className="iconfont ic-password">&#xe658;</i>
             </div>
-
             <div className="remember-btn">
               <input type="checkbox" value="true" /><span>记住我</span>
             </div>

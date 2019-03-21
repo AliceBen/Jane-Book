@@ -1,0 +1,45 @@
+form .input-prepend {
+    position: relative;
+    width: 100%;
+}
+
+.regButton {
+    width: 100%;
+    padding: 9px 18px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    background: #42c02e;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    clear: both;
+}
+
+.sign-up-msg {
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: #969696;
+}
+
+.input-prepend i {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    font-size: 18px;
+    color: #969696;
+}
+
+.ic-user {
+    margin-top: 12px;
+}
+
+.help-block {
+    float: left;
+    margin-top: -15px;
+    color: rgb(187, 184, 184);
+}

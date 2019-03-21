@@ -72,7 +72,7 @@ import { actionCreator as loginActionCreators } from '../../page/login/store'
                   </Link>
                   </li>
                 <li>
-                  <Link className="reg" to={'/'}>注册</Link>
+                  <Link className="reg" to='/register'>注册</Link>
                 </li>
                 <li className="right">
                   {
