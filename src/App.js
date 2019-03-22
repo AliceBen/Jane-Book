@@ -8,6 +8,7 @@ import Detail from './page/detail'
 import Login from './page/login'
 import Write from './page/write'
 import Register from './page/register'
+import './popup'
 
 class App extends Component {
   render() {
