@@ -37,17 +37,20 @@ class Register extends Component {
   }
 
 handleClick(){
-  if(this.state.userName === ""||this.state.userName === null){
+
+  const { userName, tel, userPwd } = this.state
+
+  if(userName === ""||userName === null){
       this.setState({
           unameHelp: "* 用户名不能为空"
       })
-  }else if(this.state.tel === "" || this.state.tel === null) {
+  }else if(tel === "" || tel === null) {
     this.setState({
       unameHelp: "",
       utelHelp:"*手机号码不能为空"
     })
  
-  } else if(this.state.userPwd === ""||this.state.userPwd === null){
+  } else if(userPwd === ""||userPwd === null){
       this.setState({
           unameHelp: "",
           utelHelp:"",
