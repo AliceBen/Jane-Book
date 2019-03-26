@@ -1,0 +1,201 @@
+.newsButton {
+  border: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  line-height: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #404040;
+}
+.writeMain {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+.WriteLeft {
+  float: left;
+  position: absolute;
+  width: 16.66666667%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #404040;
+  color: #f2f2f2;
+  z-index: 100;
+  display: block;
+  box-sizing: border-box;
+}
+.homePage {
+  padding: 30px 18px 5px;
+  text-align: center;
+}
+.homePage a {
+  display: block;
+  font-size: 15px;
+  padding: 9px 0;
+  color: #ec7259;
+  border: 1px solid #ec7259;
+  border-radius: 20px;
+  -webkit-transition: border-color 0.2s ease-in;
+  -o-transition: border-color 0.2s ease-in;
+  transition: border-color 0.2s ease-in;
+}
+.New {
+  padding: 0 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.New span {
+  font-size: 15px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+.diaryLi {
+  position: relative;
+  background-color: #666;
+  border-left: 3px solid #f2f2f2;
+  padding-left: 12px;
+  line-height: 40px;
+  list-style: none;
+  font-size: 15px;
+  color: #f2f2f2;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.diaryLi .diary {
+  float: right;
+}
+.diaryLi span {
+  display: block;
+  margin-right: 20px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.essayLi {
+  position: relative;
+  line-height: 40px;
+  list-style: none;
+  font-size: 15px;
+  color: #f2f2f2;
+  background-color: #404040;
+  padding: 0 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: padding .2s;
+}
+.essayLi:hover {
+  background: #666;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 15px;
+  padding-left: 15px;
+  user-select: none;
+  z-index: 150;
+  background-color: #404040;
+}
+.footer .setting {
+  display: inline-block;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.footer .issue {
+  margin-left: 5.8vw;
+  color: #999;
+  cursor: pointer;
+}
+.WriteCenter {
+  position: absolute;
+  float: left;
+  width: 30%;
+  height: 100%;
+  margin-left: 16.7%;
+  border-right: 1px solid #d9d9d9;
+  overflow-y: scroll;
+}
+.WriteCenter .newWrite {
+  line-height: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 20px 0 20px 25px;
+  cursor: pointer;
+}
+.WriteCenter .bottomWrite {
+  line-height: 30px;
+  padding: 20px 0 20px 25px;
+  cursor: pointer;
+  color: #999;
+  margin-bottom: 80px;
+}
+.WriteCenter ul {
+  position: relative;
+  margin-bottom: 0;
+  background-color: #efe9d9;
+  border-top: 1px solid #d9d9d9;
+}
+.WriteRight {
+  float: right;
+  position: relative;
+  width: 53.2%;
+  height: 100vh;
+  background: #f2f2f2;
+}
+.newConstruction {
+  overflow: hidden;
+}
+.newConstruction form {
+  height: 85px;
+  opacity: 1;
+  margin-top: 10px;
+}
+.newFormInput {
+  width: 100%;
+  height: 30px;
+  color: #ccc;
+  background-color: #595959;
+  border: 1px solid #333;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.submit {
+  border: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  line-height: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #404040;
+  color: #42c02e;
+  border: 1px solid #42c02e;
+  border-radius: 15px;
+}
+.cancel {
+  border: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  line-height: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #404040;
+}
