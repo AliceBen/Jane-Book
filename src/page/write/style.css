@@ -58,7 +58,7 @@
 .diaryLi {
   position: relative;
   background-color: #666;
-  border-left: 3px solid #f2f2f2;
+  border-left: 3px solid #ec7259;
   padding-left: 12px;
   line-height: 40px;
   list-style: none;
@@ -111,7 +111,7 @@
   transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer .issue {
-  margin-left: 5.8vw;
+  margin-left: 7vw;
   color: #999;
   cursor: pointer;
 }
@@ -159,6 +159,15 @@
   opacity: 1;
   margin-top: 10px;
 }
+.Construction {
+  display: none;
+  overflow: hidden;
+}
+.Construction form {
+  height: 85px;
+  opacity: 1;
+  margin-top: 10px;
+}
 .newFormInput {
   width: 100%;
   height: 30px;
@@ -185,6 +194,7 @@
   color: #42c02e;
   border: 1px solid #42c02e;
   border-radius: 15px;
+  outline: none;
 }
 .cancel {
   border: 0;
@@ -198,4 +208,5 @@
   font-size: 14px;
   font-weight: 500;
   background: #404040;
+  outline: none;
 }

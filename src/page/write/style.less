@@ -72,7 +72,7 @@
 .diaryLi {
   position: relative;
   background-color: @bgColor;
-  border-left: 3px solid @color;
+  border-left: 3px solid @border;
   padding-left: 12px;
   line-height: 40px;
   list-style: none;
@@ -131,7 +131,7 @@
   }
 
   .issue{
-    margin-left: 5.8vw;
+    margin-left: 7vw;
     color: @colorT;
     cursor: pointer;
   }
@@ -187,6 +187,16 @@
   }
 }
 
+.Construction {
+  display: none;
+  overflow: hidden;
+  form {
+    height: 85px;
+    opacity: 1;
+    margin-top: 10px;
+  }
+}
+
 .newFormInput {
   width: 100%;
   height: 30px;
@@ -204,10 +214,12 @@
   color: @newColor;
   border:1px solid @newColor;
   border-radius: 15px;
+  outline: none;
 }
 
 .cancel {
   .newsButton;
+  outline: none;
 }
 
 
