@@ -4,6 +4,11 @@ export const changleNewWrite = () => ({
     type:actionType.NEW_WRITE
 })
 
-export const changeCancelWrite = () => ({
-    type:actionType.CANCELWRITE
+export const changeCancelWrite = (count) => ({
+    type:actionType.CANCELWRITE,
+    count
+})
+
+export const handleAddWrite = () => ({
+    type:actionType.HANDLE_ADD_WRITE
 })

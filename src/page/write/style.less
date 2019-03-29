@@ -6,6 +6,7 @@
 @bgColorT:#404040;
 @borderF:#d9d9d9;
 @newColor:#42c02e;
+@bgColors:#595959;
 
 .newsButton {
   border:0;
@@ -176,6 +177,28 @@
   width: 53.2%;
   height: 100vh;;
   background: @color;
+  box-sizing: border-box;
+
+  .textarea{
+    width: 100%;
+    height: 100%;
+    font-family: '微软雅黑';
+    font-size: 16px;
+    outline: none;
+    border: none;
+    margin: 15px;
+  }
+
+  .texta {
+    display: none;
+  }
+}
+
+.addTime {
+  line-height: 60px;
+  padding-left: 45px;
+  background: #fff;
+  font-size: 20px;
 }
 
 .newConstruction {
@@ -189,19 +212,13 @@
 
 .Construction {
   display: none;
-  overflow: hidden;
-  form {
-    height: 85px;
-    opacity: 1;
-    margin-top: 10px;
-  }
 }
 
 .newFormInput {
   width: 100%;
   height: 30px;
   color: #ccc;
-  background-color: #595959;
+  background-color: @bgColors;
   border: 1px solid #333;
   padding: 4px 6px;
   margin-bottom: 10px;
@@ -222,8 +239,42 @@
   outline: none;
 }
 
+.adds{
+  position: relative;
+  margin-bottom: 0;
+  background: #dddcda;
+  border-top: 1px solid #d9d9d9;
+}
 
+.Writes{
+  display: none;
+}
 
+.writesLi {
+  position: relative;
+  height: 90px;
+  color: @bgColors;
+  background-color: #e6e6e6;;
+  margin-bottom: 0;
+  padding: 15px 10px 15px 60px;
+  box-shadow: 0 0 0 1px #d9d9d9;
+  border-left: 5px solid transparent;
+  list-style: none;
+  line-height: 60px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.time {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 40px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 
 

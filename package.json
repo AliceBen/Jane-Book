@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "immutable": "^3.8.2",
+    "moment": "^2.24.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-loadable": "^5.4.0",

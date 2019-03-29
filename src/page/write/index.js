@@ -3,10 +3,18 @@ import { connect } from 'react-redux'
 import { Redirect,Link } from 'react-router-dom'
 import './style.css'
 import * as actionCreator from'./store/actionCreators';
+import moment from 'moment'
 
 class Write extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      count: []
+    }
+  }
    render() {
-    const { loginStatus, focus,handleNewWrite,cancelWrite } = this.props;
+    let now = moment().format('YYYY-MM-DD')
+    const { loginStatus, focus,handleNewWrite,cancelWrite,handleAddWrite,addWrite,count } = this.props;
 		if (loginStatus) {
       return(
         <div className="writeMain">
@@ -28,19 +36,14 @@ class Write extends Component {
                 type="button"
                 className="cancel"
                 onClick={cancelWrite}
-                ><span>取 消</span></button>
+                >
+                  <span>取 消</span>
+                </button>
               </form>
             </div>
           </div>
           <ul className="">
             <li className="diaryLi" title="日记本">
-            <div className="diary">
-              {/* <span>
-              <ul className="">
-                <li className="" title=""><span className=""><i className=""></i>修改文集</span></li>
-                <li className="" title=""><span className=""><i className=""></i>删除文集</span></li>
-              </ul></span> */}
-            </div>
               <span>日记本</span></li>
             <li className="essayLi" title="随笔">
               <span>随笔</span>
@@ -53,16 +56,38 @@ class Write extends Component {
           </div>
           <div className="WriteCenter">
             <div className="WriteCenterMain">
-              <div className="newWrite">
+              <div className="newWrite" onClick={() =>handleAddWrite(count)}>
                 <span> 新建文章</span>
               </div>
-              <ul className="Writes"></ul>
+              <ul className={addWrite ? 'adds' : 'Writes' }>
+                <li className="writesLi" title={now}>
+                  <span className="time">{now}</span>
+                  <span className="hLzJv"> </span><span className="words">字数:0</span>
+                </li>
+              </ul>
               <div className="bottomWrite">
                 <span> 在下方新建文章</span>
               </div>
             </div>
           </div>
-          <div className="WriteRight"></div>
+
+          {
+            count.map(() => {
+              // count++;
+              for(var i = 0; i<count; i++){
+                  return (
+                <div className="WriteRight">
+                  <div className={addWrite? 'addTime' : 'Writes'}>
+                    {now}
+                  </div>
+                  <textarea className={addWrite?'textarea':'texta'}></textarea>
+              </div>
+              )
+              }
+            
+            })
+          }
+          
        </div>
        )
     }else {
@@ -73,7 +98,9 @@ class Write extends Component {
 
 const mapState = (state) => ({
   loginStatus: state.getIn(['login', 'login']),
-  focus:state.getIn(['Write','focus'])
+  focus:state.getIn(['Write','focus']),
+  addWrite:state.getIn(['Write','addWrite']),
+  count:state.getIn(['Write','count'])
 })
 
 const mapDispath = (dispatch) => ({
@@ -82,6 +109,9 @@ const mapDispath = (dispatch) => ({
   },
   cancelWrite() {
     dispatch(actionCreator.changeCancelWrite())
+  },
+  handleAddWrite(count) {
+    dispatch(actionCreator.handleAddWrite(count))
   }
 })
 
