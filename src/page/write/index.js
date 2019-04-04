@@ -14,7 +14,7 @@ class Write extends Component {
   }
    render() {
     let now = moment().format('YYYY-MM-DD')
-    const { loginStatus, focus,handleNewWrite,cancelWrite,handleAddWrite,addWrite,count } = this.props;
+    const { loginStatus, focus,handleNewWrite,cancelWrite,handleAddWrite,addWrite } = this.props;
 		if (loginStatus) {
       return(
         <div className="writeMain">
@@ -56,7 +56,7 @@ class Write extends Component {
           </div>
           <div className="WriteCenter">
             <div className="WriteCenterMain">
-              <div className="newWrite" onClick={() =>handleAddWrite(count)}>
+              <div className="newWrite" onClick={handleAddWrite}>
                 <span> 新建文章</span>
               </div>
               <ul className={addWrite ? 'adds' : 'Writes' }>
@@ -70,24 +70,12 @@ class Write extends Component {
               </div>
             </div>
           </div>
-
-          {
-            count.map(() => {
-              // count++;
-              for(var i = 0; i<count; i++){
-                  return (
-                <div className="WriteRight">
-                  <div className={addWrite? 'addTime' : 'Writes'}>
-                    {now}
-                  </div>
-                  <textarea className={addWrite?'textarea':'texta'}></textarea>
+            <div className="WriteRight">
+              <div className={addWrite? 'addTime' : 'Writes'}>
+                {now}
               </div>
-              )
-              }
-            
-            })
-          }
-          
+              <textarea className={addWrite?'textarea':'texta'}></textarea>
+          </div>
        </div>
        )
     }else {
@@ -100,7 +88,6 @@ const mapState = (state) => ({
   loginStatus: state.getIn(['login', 'login']),
   focus:state.getIn(['Write','focus']),
   addWrite:state.getIn(['Write','addWrite']),
-  count:state.getIn(['Write','count'])
 })
 
 const mapDispath = (dispatch) => ({
@@ -110,8 +97,8 @@ const mapDispath = (dispatch) => ({
   cancelWrite() {
     dispatch(actionCreator.changeCancelWrite())
   },
-  handleAddWrite(count) {
-    dispatch(actionCreator.handleAddWrite(count))
+  handleAddWrite() {
+    dispatch(actionCreator.handleAddWrite())
   }
 })
 
