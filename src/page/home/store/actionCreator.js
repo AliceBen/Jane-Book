@@ -16,7 +16,7 @@ const addHomeList = (list, nextPage) => ({
 
 const addAuthor = ( result ) => ({
 	type: actionType.ADD_AUTHOR,
-	authorList: result.authorList
+	authorList: result.authorList,
 })
 
 export const getHomeInfo = () => {
@@ -55,7 +55,6 @@ export const getMoreAuthor = () => {
 	return (dispatch) => {
 		axios.get('/API/write.json').then((res) => {
 			const result = res.data.data
-			console.log(result)
 			dispatch(addAuthor(result));
     })
 	}

@@ -5,6 +5,10 @@ import './style.css'
 import { actionCreator } from './store';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
    render() {
     const { loginStatus } = this.props;
 		if (!loginStatus) {
@@ -20,7 +24,6 @@ class Login extends Component {
           </h4>
           <div className="js-sign-in-container">
           <form method="post">
-
             <div className="input-prepend restyle js-normal">
               <input placeholder="手机号或邮箱" type="text" className="tel" ref={(input) => {this.account = input}} />
               <i className="iconfont ic-user">&#xe61c;</i>
@@ -35,7 +38,10 @@ class Login extends Component {
             <div className="forget-btn">
               <a className="" data-toggle="dropdown" href="">登录遇到问题?</a>
             </div>
-            <button className="sign-in-button" type="button" onClick={() => this.props.login(this.account, this.password)}>
+            <button
+              className="sign-in-button" 
+              type="button" 
+              onClick={() => this.props.login(this.account, this.password)}>
               <span></span>
               登录
             </button>
@@ -76,8 +82,8 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-	login(accountElem, passwordElem){
-		dispatch(actionCreator.login(accountElem.value, passwordElem.value))
+	login(account, password){
+		dispatch(actionCreator.login(account.value, password.value))
 	}
 })
 

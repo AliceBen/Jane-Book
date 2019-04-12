@@ -92,7 +92,10 @@ handleClick(){
                 <i className="iconfont ic-password">&#xe658;</i>
               </div>
                 <em className="help-block">{this.state.upwdHelp}</em>
-              <input type="button" value="注册" className="regButton" onClick={this.handleClick.bind(this)} />
+              <input type="button" 
+                     value="注册" 
+                     className="regButton" 
+                     onClick={this.handleClick.bind(this)} />
               <p className="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守简书<br/> <Link to="">用户协议</Link> 和 <Link to="">隐私政策</Link> 。</p>
             </form>
             <div className="more-sign">

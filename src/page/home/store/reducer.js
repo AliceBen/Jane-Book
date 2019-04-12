@@ -7,7 +7,7 @@ const defaultState = fromJS({
   articlePage: 1,    // 分页
   showScroll: false,
   mouseOver:false,
-  authorList:[]
+  authorList:[],
 });
 
 const changeHomeDate = (state, action) => {
@@ -39,7 +39,7 @@ export default (state = defaultState, action) => {
     case actionType.ADD_AUTHOR:
       console.log(action,'123')
       return state.set('authorList',fromJS(action.authorList))
-    default: 
+      default: 
       return state;
   }
 }

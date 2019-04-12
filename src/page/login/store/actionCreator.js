@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as actionType from './actionType';
 
 const changeLogin = () => ({
@@ -13,14 +12,12 @@ export const logout = () => ({
 
 export const login = (accout, password) => {
 	return (dispatch) => {
-		axios.get('/API/login.json?account=' + accout + '&password=' + password).then((res) => {
-            const result = res.data.data;
-            console.log(result)
-			if (result) {
-				dispatch(changeLogin())
-			}else {
-				alert('登陆失败')
-			}
-		})
+      if(accout === "" || accout === null) {
+          alert('用户名不能为空')
+      }else if(password === "" || password === null){
+          alert('密码不能为空')
+      }else {
+        	dispatch(changeLogin())
+      }
 	}
 }
