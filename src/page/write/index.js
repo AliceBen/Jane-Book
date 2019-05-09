@@ -4,6 +4,7 @@ import { Redirect,Link } from 'react-router-dom'
 import './style.css'
 import * as actionCreator from'./store/actionCreators';
 import moment from 'moment'
+import { Editor } from '@tinymce/tinymce-react'
 
 class Write extends Component {
   constructor(props) {
@@ -74,7 +75,17 @@ class Write extends Component {
               <div className={addWrite? 'addTime' : 'Writes'}>
                 {now}
               </div>
-              <textarea className={addWrite?'textarea':'texta'}></textarea>
+              {/* TinyMCE富文本编辑框 */}
+              <Editor
+                className={addWrite?'textarea':'texta'}
+                init={{
+                  height:'100vh',
+                  language:'zh_CN',
+                  plugins: 'link image code',
+                  toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+                }}
+              />
+              {/* <textarea className={addWrite?'textarea':'texta'}></textarea> */}
           </div>
        </div>
        )
