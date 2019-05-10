@@ -77,7 +77,6 @@ class Write extends Component {
               </div>
               {/* TinyMCE富文本编辑框 */}
               <Editor
-                className={addWrite?'textarea':'texta'}
                 init={{
                   height:'100vh',
                   language:'zh_CN',
@@ -85,7 +84,6 @@ class Write extends Component {
                   toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
                 }}
               />
-              {/* <textarea className={addWrite?'textarea':'texta'}></textarea> */}
           </div>
        </div>
        )
